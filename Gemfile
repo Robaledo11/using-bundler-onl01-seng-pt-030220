@@ -5,6 +5,10 @@ gem "hashie"
 gem "octokit", '~> 2.0'
 gem "awesome_print", git: "https://github.com/awesome-print/awesome_print"
 
+    it "should list the awesome_print gem specifying a remote git repository (use github)" do
+      expect(@gemfile_text =~ /gem ['"]awesome_print['"], ?(git:|:git ?=>) ?['"]git@github\.com:awesome\-print\/awesome_print\.git['"]/).not_to eq(nil)
+    end
+
 
 gem "pry", :group => :development
 
